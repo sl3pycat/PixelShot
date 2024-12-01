@@ -1,5 +1,6 @@
 scene("game", function StartGame(){
-  SpawnPlayer()
+  SpawnPlayer()//adds the player to the game
+  StartPlayerBullets()//start the manager for player bullets
   
   let level_manager = add([
     timer(),
@@ -9,10 +10,12 @@ scene("game", function StartGame(){
   ])
   
   level_manager.loop(1, function(){
-    level_manager.score++
-    level_manager.level+=0.1
     
-    SpawnAsteroid()
+    level_manager.score++//increases the score by one every second
+    level_manager.level+=0.1//increases the level every ten seconds
+    
+    SpawnAsteroid()//spawns an asteroid every second
+    
   })
   
 })

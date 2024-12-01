@@ -14,4 +14,10 @@ function SpawnAsteroid(){
     player.hurt(10)
     shake(5)
   })
+  
+  asteroid.onCollide("bullet", function(bullet){
+    if(chance(0.2))choose([SpawnLifePoint, SpawnLifePointPlus, SpawnLifePointMax])(asteroid)
+    bullet.hurt(1)
+    asteroid.destroy()
+  })
 }
