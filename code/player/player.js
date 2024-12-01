@@ -4,6 +4,7 @@ function SpawnPlayer(){
     color("#ffffff"),
     anchor("center"),
     pos(center()),
+    health(100),
     area(),
     "player"
   ])
